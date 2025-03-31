@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WriteFlow
 
-## Getting Started
+WriteFlow is a feature-rich blogging platform built with **Next.js 15**, **PostgreSQL**, and **Clerk authentication**. It enables seamless blog creation, management, and sharing with powerful features like **full-text search, likes & comments, bookmarks, analytics, and dark mode**.
 
-First, run the development server:
+## 🚀 Features
+- **User Authentication** (Clerk-based login/signup)
+- **Create, Edit, and Delete Blogs**
+- **Public & Private Blog Management**
+- **Full-Text Search (PostgreSQL `tsvector`)**
+- **Likes & Comments System**
+- **Bookmarks for Saving Blogs**
+- **Image Upload (Cloudinary Integration)**
+- **User Dashboard with Analytics**
+- **Dark Mode Support**
+- **Mobile Responsive UI**
 
+## 🛠️ Tech Stack
+- **Frontend:** Next.js 15 (App Router), Tailwind CSS
+- **Backend:** Next.js API Routes, PostgreSQL
+- **Auth:** Clerk
+- **Storage:** Cloudinary (for images)
+- **Deployment:** Vercel
+
+## 📂 Installation & Setup
+
+### 1️⃣ Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/writeflow.git
+cd writeflow
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Install Dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3️⃣ Set Up Environment Variables
+Create a `.env.local` file in the root directory and configure the following:
+```env
+NEXT_PUBLIC_SUPABASE_URL=supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=supabase_anonkey
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=clerk_key
+CLERK_SECRET_KEY=clerk_secret_key
+CLOUDINARY_CLOUD_NAME=cloudinary_cloud_name
+CLOUDINARY_API_KEY=cloudinary_api_key
+CLOUDINARY_API_SECRET=cloudinary_secret_key
+GEMINI_API_KEY=gemini_api_key
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4️⃣ Run Database Migrations
+If using PostgreSQL, ensure you apply migrations:
+```bash
+npx prisma migrate dev --name init
+```
 
-## Learn More
+### 5️⃣ Start the Development Server
+```bash
+npm run dev
+```
+Your app will be running at `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+## 🌍 Deployment (Vercel)
+1. Push your code to **GitHub**.
+2. Connect your repository to **Vercel**.
+3. Add the **same environment variables** in Vercel.
+4. Deploy and enjoy 🚀.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 License
+This project is open-source and available under the **MIT License**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
+### 💡 Contributing
+Pull requests are welcome! Feel free to open an issue for feature requests or bug fixes.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Made with ❤️ by Ayush

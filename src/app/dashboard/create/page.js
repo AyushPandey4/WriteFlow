@@ -1,11 +1,13 @@
 'use client'
-
+import WithSearchParams from "@/components/WithSearchParams"
 import CreateArticle from "@/components/CreateArticle"
 
 const CreateBlogs = () => {
   return (
     <div>
-      <CreateArticle />
+      <WithSearchParams fallback={<div>Loading editor...</div>}>
+        <CreateArticle />
+      </WithSearchParams>
     </div>
   )
 }
